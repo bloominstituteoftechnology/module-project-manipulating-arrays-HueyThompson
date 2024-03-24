@@ -32,6 +32,35 @@
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
     function sumNumsFor(nums) {
 
+      var count = 0;
+      var contains = false;
+
+      if(nums.length === 0)
+      {
+        count = 0;
+      }
+      else if(nums.indexOf(13) != -1)
+      {
+        contains = true;
+      }
+
+      if(contains === true)
+      {
+        count = "I'm too superstitious!";
+      }
+      else{
+
+        for(var i = 0; i < nums.length; i++)
+      {
+        if(typeof nums[i] === "number")
+        {
+          count += nums[i];
+        }
+      }
+      }
+
+      return count;
+      
     }
 
     // 👉 CHALLENGE 2
@@ -42,6 +71,20 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
 
+      var vowels = ["a", "e", "i", "o", "u"];
+      var arr = []
+
+      for(var i = 0; i < str.length; i++)
+      {
+        if(vowels.indexOf(str[i]) === -1)
+        {
+          arr.push(str[i]);
+        }
+      }
+
+      arr = arr.join("");
+      return arr;
+
     }
 
     // 👉 CHALLENGE 3
@@ -49,8 +92,33 @@
     // 🧠 Examples of usage:
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
-    function sumNumsWhile() {
+    function sumNumsWhile(arr) {
 
+      var count = 0;
+      var sum;
+
+      if(arr.length === 0)
+      {
+        sum = 0;
+      } 
+      else if(arr.indexOf(13) !== -1)
+      {
+
+        sum = "I'm too superstitious!";
+      }
+      else{
+        sum = 0;
+
+        while(count != arr.size)
+        {
+          if(typeof arr[count] === "number")
+          {
+            sum += arr[count]
+          }
+          count++;
+        }
+      }
+      return sum;
     }
 
     // 👉 CHALLENGE 4
